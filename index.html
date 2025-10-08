@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div class="brand">
+        <h1 class="brand__title">Lista de Compras</h1>
+        <p class="brand__subtitle">Persistente • Responsiva</p>
+      </div>
+
+      <form id="add-item-form" class="add-form" aria-label="Adicionar item">
+        <input id="item-input" class="add-form__input" type="text" placeholder="Adicionar item..." required />
+        <button class="add-form__btn" type="submit">Adicionar</button>
+      </form>
+    </header>
+
+    <section class="controls">
+      <div class="filters">
+        <button data-filter="all" class="filter-btn active" id="todos">Todos</button>
+        <button data-filter="active" class="filter-btn" id="pendentes">Pendentes</button>
+        <button data-filter="bought" class="filter-btn" id="comprados">Comprados</button>
+      </div>
+      <div class="bulk-actions">
+        <button id="clear-bought" class="secondary-btn">Remover comprados</button>
+        <button id="select-all" class="secondary-btn">Marcar todos</button>
+      </div>
+    </section>
+
+    <section class="list-wrap">
+      <ul id="items-list" class="items-list">
+        <!-- Itens da lista vão aqui via JS -->
+      </ul>
+      <div id="empty-state" class="empty-state">Nenhum item. Adicione algo acima.</div>
+    </section>
+
+    <footer class="app__footer">
+      <div class="stats" id="stats">0 itens • 0 pendentes • 0 comprados</div>
+      <small class="note">Dados armazenados no navegador.</small>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
